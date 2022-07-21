@@ -11,7 +11,9 @@ pipeline {
         stage('Delete Existing Project'){
             steps{
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
-                   sh "oc delete project microservice"}
+                   sh "oc delete project microservice"
+                   sh "sleep 20"
+                }
             }
         }
         stage('Login to namespace') {
