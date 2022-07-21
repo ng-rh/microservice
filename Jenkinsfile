@@ -1,13 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Check Out GIT repo') {
-            steps {
-                git branch: 'v2.0', url: 'https://github.com/ng-rh/employee-app-v2.git'
-                
-            }
-            
-        }
         stage('Login to a dev cluster') {
             steps {
                 sh "oc login https://api.cluster-nn9bx.nn9bx.sandbox1323.opentlc.com:6443 --username=opentlc-mgr --password=r3dh4t1! --insecure-skip-tls-verify"
