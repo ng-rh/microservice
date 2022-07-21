@@ -12,7 +12,7 @@ pipeline {
             steps{
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
                    sh "oc delete project microservice"
-                   sh "sleep 30"
+                   sh "sleep 25"
                 }
             }
         }
